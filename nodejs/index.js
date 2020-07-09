@@ -4,8 +4,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Smooch = require('smooch-core');
-const http = require('http');
-const path = require('path')
 
 // Config
 const PORT = 80;
@@ -26,7 +24,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/hello');
 
 // Expose /messages endpoint to capture webhooks https://docs.smooch.io/rest/#webhooks-payload
 app.post('/messages', function(req, res) {
