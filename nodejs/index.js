@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/hello', hello.display);
+app.get('/hello');
 
 // Expose /messages endpoint to capture webhooks https://docs.smooch.io/rest/#webhooks-payload
 app.post('/messages', function(req, res) {
