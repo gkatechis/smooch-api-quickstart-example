@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const Smooch = require('smooch-core');
 
 // Config
-const PORT = 3000;
+const PORT = 80;
 const KEY_ID = 'app_5f04d0d83dfc64000c143f7c';
 const SECRET = '4iMCHWOaJnZcfGAn3ulthRl2WCY5QRGxrt5pq23v-2ZgZVt1QVk0NS2TT3FfArA1WMw-dgXxJcrt0q7gnMdAPw';
 
