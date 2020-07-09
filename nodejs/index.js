@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 
 // Expose /messages endpoint to capture webhooks https://docs.smooch.io/rest/#webhooks-payload
 app.post('/messages', function(req, res) {
-  console.log('webhook PAYLOAD:\n', JSON.stringify(req.body, null, 4));
+  // console.log('webhook PAYLOAD:\n', JSON.stringify(req.body, null, 4));
 
   const appUserId = req.body.appUser._id;
   // Call REST API to send message https://docs.smooch.io/rest/#post-message
@@ -36,7 +36,7 @@ app.post('/messages', function(req, res) {
 
   if ((x.trigger === 'message:appUser') && (x.messages[0].source.type === 'messenger')) {
 
-    console.log('REQUEST BODY:\n', x)  
+    console.log('REQUEST BODY:\n', JSON.stringify(x)); 
     smooch.appUsers.sendMessage(appUserId, {
           type: 'text',
           text: 'Live long and prosper',
