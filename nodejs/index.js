@@ -36,7 +36,7 @@ app.post('/messages', function(req, res) {
 
   if ((x.trigger === 'message:appUser') && (x.messages[0].source.type === 'messenger')) {
 
-    console.log('REQUEST BODY:\n', JSON.stringify(x)); 
+    console.log('REQUEST BODY:\n', JSON.stringify(x, null, 4)); 
     smooch.appUsers.sendMessage(appUserId, {
           type: 'text',
           text: 'Live long and prosper',
