@@ -8,7 +8,7 @@ const http = require('http');
 const path = require('path')
 
 // Config
-const PORT = 3000;
+const PORT = 80;
 const KEY_ID = 'app_5f04d0d83dfc64000c143f7c';
 const SECRET = '4iMCHWOaJnZcfGAn3ulthRl2WCY5QRGxrt5pq23v-2ZgZVt1QVk0NS2TT3FfArA1WMw-dgXxJcrt0q7gnMdAPw';
 
@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.get('/hello', hello.display);
 
 // Expose /messages endpoint to capture webhooks https://docs.smooch.io/rest/#webhooks-payload
 app.post('/messages', function(req, res) {
